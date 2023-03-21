@@ -70,6 +70,7 @@ public class mRNA {
 }
     public static void main (String[] args) {
       boolean terminate = false;
+      boolean newChain = false;
       Scanner userInput = new Scanner(System.in);
       Codon codon = null;
       System.out.print("Enter in mRNA codons: ");
@@ -237,14 +238,14 @@ public class mRNA {
             break;
           case UAA:
           System.out.println("End of protein chain");
-          System.out.println("New protein chain - ");
+          newChain = true;
             break;
           case UAC:
           System.out.println("Tyrosine");
             break;
           case UAG:
           System.out.println("End of protein chain");
-          System.out.println("New protein chain - ");
+          newChain = true;
             break;
           case UAU:
           System.out.println("Tyrosine");
@@ -263,7 +264,7 @@ public class mRNA {
             break;
           case UGA:
           System.out.println("End of protein chain");
-          System.out.println("New protein chain - ");
+          newChain = true;
             break;
           case UGC:
           System.out.println("Cysteine");
@@ -288,6 +289,11 @@ public class mRNA {
             break;
           default:
             break;
+          }
+          // if new chain is started print new chain
+          if (newChain) {
+            System.out.print("New protein chain - ");
+            newChain = false;
           }
         }
         System.out.println(mRNA.toUpperCase());
