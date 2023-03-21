@@ -236,13 +236,15 @@ public class mRNA {
           System.out.println("Valine");
             break;
           case UAA:
-          //stop
+          System.out.println("End of protein chain");
+          System.out.println("New protein chain - ");
             break;
           case UAC:
           System.out.println("Tyrosine");
             break;
           case UAG:
-          //stop
+          System.out.println("End of protein chain");
+          System.out.println("New protein chain - ");
             break;
           case UAU:
           System.out.println("Tyrosine");
@@ -260,7 +262,8 @@ public class mRNA {
           System.out.println("Serine");
             break;
           case UGA:
-          //stop
+          System.out.println("End of protein chain");
+          System.out.println("New protein chain - ");
             break;
           case UGC:
           System.out.println("Cysteine");
